@@ -1,26 +1,34 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React from "react"
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import Home from './Home'
-import About from './About'
+import Landing from './Landing'
+import Profile from './Profile'
+import Dashboard from './Dashboard'
+import Planner from './Planner'
+import Stats from './Stats'
 
-class App extends Component {
-
-  render() {
-    let { page } = this.props
-    return (
-      <div id='content'>
-        {page === 'home' && <Home />}
-        {page === 'about' && <About />}
-      </div>
-    )
-  }
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/:user/profile">
+          <Profile />
+        </Route>
+        <Route path="/:user/dashboard">
+          <Dashboard />
+        </Route>
+        <Route path="/:user/planner">
+          <Planner />
+        </Route>
+        <Route path="/:user/stats">
+          <Stats />
+        </Route>
+        <Route path="/">
+          <Landing />
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
-function mapStateToProps(state) {
-  return {
-    page: state.page
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App
