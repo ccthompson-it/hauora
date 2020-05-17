@@ -1,15 +1,15 @@
 import React, { Fragment } from "react"
 import Header from './Header'
 
-function Planner() {
+function Dashboard() {
   return (
     <Fragment>
       <Header />
       <div className="center">
-        <h1>This is the Planner!</h1>
+        <h1>This is the Dashboard!</h1>
       </div>
     </Fragment>
   )
 }
 
-export default Planner
+export default Dashboard

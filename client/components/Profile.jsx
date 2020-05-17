@@ -1,15 +1,17 @@
 import React, { Fragment } from "react"
+import { Link } from 'react-router-dom'
 import Header from './Header'
 
-function Planner() {
+function Profile() {
   return (
     <Fragment>
       <Header />
       <div className="center">
-        <h1>This is the Planner!</h1>
+        <h1>This is the Profile!</h1>
+        <Link to="/"><button>Sign Out!</button></Link>
       </div>
     </Fragment>
   )
 }
 
-export default Planner
+export default Profile
