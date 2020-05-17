@@ -25,7 +25,6 @@ class Options extends Component {
   }
 
   handleSubmit = () => {
-    console.log(this.props.pillar, this.state.activity)
     options[this.props.pillar].push(this.state.activity)
     this.setState({
       activity: ""
